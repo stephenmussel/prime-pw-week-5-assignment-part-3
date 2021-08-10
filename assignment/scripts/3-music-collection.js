@@ -22,8 +22,11 @@ console.log(addToCollection('tous les garcon et les filles', 'francoise hardy', 
 console.log(collection); // logs collection of albums
 
 function showCollection() { // take in an array parameter
-  console.log(`the number of albums in this collection is: ${collection.length}`); // log number of items (albums) in array (collection)
-  for (let i=0; i<collection.length; i++){
-    // loop over the array and console.log each album's information formatted like: TITLE by ARTIST, published in YEAR
+  // console.log(`the number of albums in this collection is: ${collection.length}`); // log number of items (albums) in array (collection)
+
+  for (let albumInfo in album) {
+    console.log(`${albumInfo}: ${album[albumInfo]}`);
   }
-}
+} // end showCollection
+
+showCollection();
