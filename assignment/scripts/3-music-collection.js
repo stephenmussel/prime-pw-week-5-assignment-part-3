@@ -20,3 +20,10 @@ console.log(addToCollection('juno soundtrack', 'barry louis polisar', 2007)); //
 console.log(addToCollection('garden party', 'ricky nelson', 1972)); // logs five album
 console.log(addToCollection('tous les garcon et les filles', 'francoise hardy', 1962)); // logs six album
 console.log(collection); // logs collection of albums
+
+function showCollection() { // take in an array parameter
+  console.log(`the number of albums in this collection is: ${collection.length}`); // log number of items (albums) in array (collection)
+  for (let i=0; i<collection.length; i++){
+    // loop over the array and console.log each album's information formatted like: TITLE by ARTIST, published in YEAR
+  }
+}
