@@ -3,14 +3,20 @@ console.log('***** Music Collection *****')
 let collection = [];
 
 let album = {
-  title: 'ok computer',
-  artist: 'radiohead',
-  yearPublished: 1997
-};
-
-function addToCollection(title, artist, yearPublished) {
-  collection.push(album);
-    return album;
+  title: 'a radical recital',
+  artist: 'rasputina',
+  yearPublished: 2005
 }
 
-addToCollection();
+function addToCollection(title, artist, yearPublished) {
+  collection.push({title, artist, yearPublished}); // add album to end of collection array
+  return {title, artist, yearPublished}; // returns values of album object
+} // end addToCollection
+
+console.log(addToCollection('radical recital', 'rasputina', 2005)); // logs one album
+console.log(addToCollection('the lost & found 2nd edition', 'rasputina', 2007)); // logs two album
+console.log(addToCollection('comment te dire adieu', 'francoise hardy', 1968)); // logs three album
+console.log(addToCollection('juno soundtrack', 'barry louis polisar', 2007)); // logs four album
+console.log(addToCollection('garden party', 'ricky nelson', 1972)); // logs five album
+console.log(addToCollection('tous les garcon et les filles', 'francoise hardy', 1962)); // logs six album
+console.log(collection); // logs collection of albums
