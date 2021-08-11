@@ -15,8 +15,7 @@ console.log(addToCollection('garden party', 'ricky nelson', 1972)); // logs 5th 
 console.log(addToCollection('tous les garcon et les filles', 'francoise hardy', 1962)); // logs 6th album added to collection
 console.log(collection); // logs collection of albums
 
-function showCollection() {
-  // takes in any parameters
+function showCollection() { // takes in any parameters
   console.log(`the number of albums in this collection is: ${collection.length}`); //logs number of items in array
   for (let i=0; i<collection.length; i++) {
     console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
@@ -25,3 +24,16 @@ function showCollection() {
 
 // used this to test formatting: console.log(`${collection[0].title} by ${collection[0].artist} published in ${collection[0].yearPublished}`);
 console.log(showCollection());
+
+function findByArtist(a string) {
+  let artistArr = [];
+  for (let i =0; i<collection.length; i++) {
+    if () { // if a string === collection[i].artist
+      // push a string to artistArr
+      // return artistArr
+    }
+    else {
+      // empty artistArr
+    }
+  }
+} // end findByArtist
