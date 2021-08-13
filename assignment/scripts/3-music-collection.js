@@ -3,8 +3,13 @@ console.log('***** Music Collection *****')
 let collection = []; // starts as empty array
 
 function addToCollection(title, artist, yearPublished) {
-    let album = {title, artist, yearPublished};
-    collection.push(album);
+    // let album = {title, artist, yearPublished}; // another method to create new object
+    let album = {
+      title: title,
+      artist: artist,
+      yearPublished: yearPublished
+    }
+    collection.push(album); // pushes album to collection
       return(album);
 } // end addToCollection
 
@@ -22,25 +27,29 @@ console.log(addToCollection('garden party', 'ricky nelson', 1972)); // logs 5th 
 console.log(addToCollection('tous les garcon et les filles', 'francoise hardy', 1962)); // logs 6th album added to collection
 console.log(collection); // logs collection of albums
 
-// function showCollection() { // takes in any parameters
-//   console.log(`the number of albums in this collection is: ${collection.length}`); //logs number of items in array
-//   for (let i=0; i<collection.length; i++) {
-//     console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
-//   }
-// } // end showCollection
+function showCollection(arrParameter) { // takes in array parameters
+  console.log(`the number of albums in this collection is: ${collection.length}`); //logs number of items in array
+  for (let i=0; i<collection.length; i++) {
+      console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
+      // console.log(`${collection[i]['title']} by ${collection[i]['artist']} published in ${collection[i]['yearPublished']}`); // alternative syntax
+    }
+} // end showCollection
+
+console.log(showCollection()); // test to log each album: TITLE by ARTIST published in YEAR
 
 // used this to test formatting: console.log(`${collection[0].title} by ${collection[0].artist} published in ${collection[0].yearPublished}`);
-// console.log(showCollection());
-//
-// function findByArtist(a string) {
-//   let artistArr = [];
-//   for (let i =0; i<collection.length; i++) {
-//     if () { // if a string === collection[i].artist
-//       // push a string to artistArr
-//       // return artistArr
-//     }
-//     else {
-//       // empty artistArr
-//     }
-//   }
-// } // end findByArtist
+// console.log(showCollection()); // outputs: a radical recital by rasputina published in 2005
+
+function findByArtist(artist) {
+  let artistArr = [];
+  for (let i =0; i<collection.length; i++) {
+    if (artist === collection[i].artist) { // if a string === collection[i].artist
+      artistArr.push({artist}); // push a string to artistArr
+    }
+  }
+  return artistArr;
+} // end findByArtist
+
+console.log(findByArtist('test')); // outputs empty array
+console.log(findByArtist('rasputina')); // outputs 2 object properties into array
+console.log(findByArtist('ricky nelson')); // outputs 1 object property into array
