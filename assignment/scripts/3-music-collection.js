@@ -53,3 +53,14 @@ function findByArtist(artist) {
 console.log(findByArtist('test')); // outputs empty array
 console.log(findByArtist('rasputina')); // outputs 2 object properties into array
 console.log(findByArtist('ricky nelson')); // outputs 1 object property into array
+
+function search(artist, year) {
+  let searchArr = [];
+  for (let i=0; i<collection.length; i++) {
+    if (artist === collection[i].artist && year === collection[i].yearPublished) {
+      searchArr.push(artist, year);
+    }
+  } return searchArr;
+}
+
+console.log(search('rasputina', 2005));
