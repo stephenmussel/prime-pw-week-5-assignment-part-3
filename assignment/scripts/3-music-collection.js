@@ -7,13 +7,16 @@ let collection = []; // starts as empty array
   * OUTPUT: object {string, string, number} from array
 */
 
-function addToCollection(title, artist, yearPublished) {
+function addToCollection(title, artist, yearPublished, track) {
     // let album = {title, artist, yearPublished}; // another method to create new object
     let album = {
       title: title,
       artist: artist,
-      yearPublished: yearPublished
-    }
+      yearPublished: yearPublished,
+      // track: [{trackName , duration}]
+    };
+    // let trackArr = [testName, duration];
+    // album.track.push(trackArr);
     collection.push(album); // pushes album to collection
       return(album);
 } // end addToCollection
@@ -24,7 +27,7 @@ function addToCollection(title, artist, yearPublished) {
 //     return{title, artist, yearPublished}; // returns album properties
 // } // end addToCollection
 
-console.log(addToCollection('a radical recital', 'rasputina', 2005)); // logs 1st album added to collection
+console.log(addToCollection('a radical recital', 'rasputina', 2005, [['test1'], ['test2']])); // logs 1st album added to collection
 console.log(addToCollection('the lost & found 2nd edition', 'rasputina', 2007)); // logs 2nd album added to collection
 console.log(addToCollection('comment te dire adieu', 'francoise hardy', 1968)); // logs 3rd album added to collection
 console.log(addToCollection('juno soundtrack', 'barry louis polisar', 2007)); // logs 4th album added to collection
@@ -38,7 +41,8 @@ console.log(collection); // logs collection of albums
   * OUTPUT: object {string, string, number}
 */
 
-function showCollection(arrParameter) { // takes in array parameters
+// function showCollection(arrParameter) { // takes in array parameters
+function showCollection() { // takes in array parameters
   console.log(`the number of albums in the collection is: ${collection.length}`); //logs number of items in array
   for (let i=0; i<collection.length; i++) {
       console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
@@ -88,4 +92,4 @@ function search(artist, year) {
 
 console.log(search('rasputina', 2005)); // tests for both object properties found in collection. outputs array of all items in collection matching all search criteria.
 console.log(search('rasputina', 2006)); // tests for one object properties found in collection. only one search criteria matched. utputs empty array.
-console.log(search()); // tests for no object properties found in collection and/or no one search criteria entered. outputs entire collection. !WORK
+console.log(search()); // tests for no object properties found in collection and/or no one search criteria entered. outputs entire collection.
