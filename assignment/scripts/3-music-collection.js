@@ -55,7 +55,7 @@ function showCollection(arrParameter) { // take in an array parameter
 // console.log(showCollection('garden party')); // test with 1 string parameter that's ===. outputs 1 album: TITLE by ARTIST published in YEAR
 // console.log(showCollection('rasputina')); // test with 1 string parameter that's ===. outputs 2 albums: TITLE by ARTIST published in YEAR
 // console.log(showCollection('radical')); // test with 1 string parameter that's ==. outputs nothing
-console.log(showCollection(1968, 'rasputina')); // test with 1 number and 1 string parameter that are both ===. outputs outputs 1 album: TITLE by ARTIST published in YEAR that === only first parameter because that's the only argument passed
+console.log(showCollection(1968, 'rasputina')); // test with 1 number and 1 string parameter that are both ===. outputs 1 album: TITLE by ARTIST published in YEAR that === only first parameter because that's the only argument passed
 // console.log(showCollection('abracadabra')); // test with 1 string parameter that's ==. outputs nothing
 // used this to test formatting: console.log(`${collection[0].title} by ${collection[0].artist} published in ${collection[0].yearPublished}`);
 
