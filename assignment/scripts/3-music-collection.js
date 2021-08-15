@@ -39,7 +39,7 @@ console.log(collection); // logs collection of albums
 */
 
 function showCollection(arrParameter) { // takes in array parameters
-  console.log(`the number of albums in this collection is: ${collection.length}`); //logs number of items in array
+  console.log(`the number of albums in the collection is: ${collection.length}`); //logs number of items in array
   for (let i=0; i<collection.length; i++) {
       console.log(`${collection[i].title} by ${collection[i].artist} published in ${collection[i].yearPublished}`);
       // console.log(`${collection[i]['title']} by ${collection[i]['artist']} published in ${collection[i]['yearPublished']}`); // alternative syntax
@@ -60,7 +60,7 @@ function findByArtist(artist) {
   let artistArr = [];
   for (let i =0; i<collection.length; i++) {
     if (artist === collection[i].artist) { // if a string === collection[i].artist
-      artistArr.push({artist}); // pushes passed argument to artistArr
+      artistArr.push({artist}); // pushes passed argument to artistArr. does it matter if it's artistArr.push(collection[i].artist)?
     }
   } return artistArr;
 } // end findByArtist
@@ -78,12 +78,14 @@ function search(artist, year) {
   let searchArr = [];
   for (let i=0; i<collection.length; i++) {
     if (artist === collection[i].artist && year === collection[i].yearPublished) {
-      searchArr.push(artist, year);
-    }
-    return searchArr;
-  } console.log(collection);
+      // searchArr.push(artist, year); // output is 0: rasputina, 1: 2005. arguments are pushed into searchArr vs object properties from collection array are pushed into searchArr like line 82.
+      searchArr.push({artist, year}); // output is 0: artist: rasputina, year: 2005. this means the object with these properties are in the 0 index of searchArr
+    } else if (artist == null && year == null) {
+      return collection;
+    } return searchArr;
+  }
 }
 
-console.log(search('rasputina', 2005)); // tests for object properties found in collection. outputs empty array
-console.log(search('rasputina', 2006)); // tests for object one object property not found it collection. outputs empty array
-console.log(search()); // tests for no search object. outputs all albums in collection REVISIT THIS, NOT WORKING
+console.log(search('rasputina', 2005)); // tests for both object properties found in collection. outputs array of all items in collection matching all search criteria.
+console.log(search('rasputina', 2006)); // tests for one object properties found in collection. only one search criteria matched. utputs empty array.
+console.log(search()); // tests for no object properties found in collection and/or no one search criteria entered. outputs entire collection. !WORK
